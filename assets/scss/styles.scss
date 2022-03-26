@@ -1,0 +1,23 @@
+@import "config";
+@import "typo";
+
+.title {
+   margin-bottom: 10vh;
+}
+
+
+.search-bar {
+   height: 40px;
+   width: 500px;
+   padding: 3px 20px;
+   border: 1px solid grey;
+   border-radius: 22px;
+}
+
+.submit-btn {
+   border: none;
+   padding: 15px;
+   border-radius: 100%;
+}
+
+@import "mobile"
