@@ -2,28 +2,64 @@
 @import "typo";
 
 .title {
-   margin-bottom: 10vh;
+   margin-top: 90px;;
+   margin-bottom: 20vh;
 }
 
 
-.search-bar {
+.nav-bar {
+   
+   padding-bottom: 60px;
+
+   .search-bar {
    height: 40px;
    width: 500px;
    padding: 3px 20px;
    border: 1px solid grey;
    border-radius: 22px;
+   }
+
+   .submit-btn {
+      border: none;
+      padding: 15px;
+      border-radius: 100%;
+   }
 }
 
-.submit-btn {
-   border: none;
-   padding: 15px;
-   border-radius: 100%;
-}
+.score-descr {
 
+   visibility: hidden;
+   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 
-.scores {
+   .scores {
    display: flex;
    justify-content: space-around;
+   border: 2px solid red;
+   padding: 20px 20px;
+
+   background-color: orange;
+
+      .scores-left{
+         padding-right: 75px;
+
+      }
+      .scores-right {
+         padding-left: 75px;
+
+      }
+   }
+
+   .about {
+      margin-top: 20px;
+   }
+   .summary {
+      margin-top: 20px;
+   }
+
 }
+
 
 @import "mobile"

@@ -4,11 +4,14 @@ let input = document.querySelector(".search-bar");
 
 let submit = document.querySelector(".submit-btn");
 
+let scoreContainer = document.querySelector(".score-descr");
+
 let scoreLeft = document.querySelector(".scores-left-content");
 
 let scoreRight = document.querySelector(".scores-right-content");
 
-let description = document.querySelector(".summary")
+let description = document.querySelector(".summary");
+
    
 
 
@@ -47,15 +50,19 @@ async function getData(url) {
 
 
 function getObj(obj) {
+   
    let dataCategories = obj.categories;
    let dataSummary = obj.summary;
 
-   sortData(dataCategories, dataSummary);
+   showData(dataCategories, dataSummary);
 }
 
 
-function sortData(categories, summary) {
+function showData(categories, summary) {
    
+   scoreContainer.style.visibility = "visible";
+
+   description.innerHTML =  "";
    scoreRight.innerHTML = "";
    scoreLeft.innerHTML = "";
 
@@ -64,10 +71,10 @@ function sortData(categories, summary) {
       let catName = categories[i].name;
       let catScore = categories[i].score_out_of_10.toFixed(1);
       
-      let finalScore = ` ${catName}: ${catScore} <br>`;
+      let finalScore = `${catName}: <span style="color:red;">${catScore}</span> <br>`;
 
       if (i <= 8){
-         scoreLeft.innerHTML +=  finalScore ;
+         scoreLeft.innerHTML +=  finalScore;
       }else {
           scoreRight.innerHTML +=  finalScore;
        };
@@ -75,7 +82,7 @@ function sortData(categories, summary) {
 
    let resume = summary;
 
-   description.innerHTML = resume
+   description.innerHTML = resume;
    console.log(resume);
    
 }

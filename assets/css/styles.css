@@ -10,19 +10,12 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  height: 100vh;
 }
 
 main {
-  height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: auto;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -47,11 +40,21 @@ body {
   font-size: 1.8rem;
 }
 
-.title {
-  margin-bottom: 10vh;
+.scores-left,
+.scores-right {
+  line-height: 1.8rem;
 }
 
-.search-bar {
+.title {
+  margin-top: 90px;
+  margin-bottom: 20vh;
+}
+
+.nav-bar {
+  padding-bottom: 60px;
+}
+
+.nav-bar .search-bar {
   height: 40px;
   width: 500px;
   padding: 3px 20px;
@@ -59,22 +62,55 @@ body {
   border-radius: 22px;
 }
 
-.submit-btn {
+.nav-bar .submit-btn {
   border: none;
   padding: 15px;
   border-radius: 100%;
 }
 
-.scores {
+.score-descr {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.score-descr .scores {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border: 2px solid red;
+  padding: 20px 20px;
+  background-color: orange;
+}
+
+.score-descr .scores .scores-left {
+  padding-right: 75px;
+}
+
+.score-descr .scores .scores-right {
+  padding-left: 75px;
+}
+
+.score-descr .about {
+  margin-top: 20px;
+}
+
+.score-descr .summary {
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
-  .search-bar {
+  .nav-bar .search-bar {
     width: 250px;
   }
 }
