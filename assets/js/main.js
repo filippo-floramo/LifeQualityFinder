@@ -62,7 +62,7 @@ function sortData(categories, summary) {
    for (let i = 0; i < categories.length; i++) {
 
       let catName = categories[i].name;
-      let catScore = categories[i].score_out_of_10.toFixed(2);
+      let catScore = categories[i].score_out_of_10.toFixed(1);
       
       let finalScore = ` ${catName}: ${catScore} <br>`;
 
