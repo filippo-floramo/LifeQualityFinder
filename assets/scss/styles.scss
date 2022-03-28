@@ -20,4 +20,10 @@
    border-radius: 100%;
 }
 
+
+.scores {
+   display: flex;
+   justify-content: space-around;
+}
+
 @import "mobile"

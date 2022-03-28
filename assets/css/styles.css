@@ -65,6 +65,14 @@ body {
   border-radius: 100%;
 }
 
+.scores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 @media (max-width: 600px) {
   .search-bar {
     width: 250px;

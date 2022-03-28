@@ -1,10 +1,14 @@
+"use strict";
+
 let input = document.querySelector(".search-bar");
 
 let submit = document.querySelector(".submit-btn");
 
-let score = document.querySelector(".scores-right");
+let scoreLeft = document.querySelector(".scores-left-content");
 
+let scoreRight = document.querySelector(".scores-right-content");
 
+let description = document.querySelector(".summary")
    
 
 
@@ -14,7 +18,7 @@ function manageQuery(args) {
 
    let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queries[0]}`;
 
-   for (i = 1; i < queries.length; i++) {
+   for (let i = 1; i < queries.length; i++) {
       apiUrl += `-${queries[i]}`;
    }
    apiUrl += `/scores/`;
@@ -43,24 +47,37 @@ async function getData(url) {
 
 
 function getObj(obj) {
-   let sortedData = obj.categories;
+   let dataCategories = obj.categories;
+   let dataSummary = obj.summary;
 
-   sortData(sortedData);
+   sortData(dataCategories, dataSummary);
 }
 
-function sortData(sortedObj) {
 
-   for (i = 0; i < sortedObj.length; i++) {
+function sortData(categories, summary) {
+   
+   scoreRight.innerHTML = "";
+   scoreLeft.innerHTML = "";
 
+   for (let i = 0; i < categories.length; i++) {
 
-      let catName = sortedObj[i].name;
-      let catScore = sortedObj[i].score_out_of_10;
+      let catName = categories[i].name;
+      let catScore = categories[i].score_out_of_10.toFixed(2);
+      
+      let finalScore = ` ${catName}: ${catScore} <br>`;
 
-      score.textContent += ` ${catName}: ${catScore} `;
-
+      if (i <= 8){
+         scoreLeft.innerHTML +=  finalScore ;
+      }else {
+          scoreRight.innerHTML +=  finalScore;
+       };
    }
 
+   let resume = summary;
 
+   description.innerHTML = resume
+   console.log(resume);
+   
 }
 
 
