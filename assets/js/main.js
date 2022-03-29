@@ -53,14 +53,19 @@ function getObj(obj) {
    
    let dataCategories = obj.categories;
    let dataSummary = obj.summary;
+   let dataStatus = obj.status;
 
-   showData(dataCategories, dataSummary);
+   showData(dataCategories, dataSummary, dataStatus);
 }
 
 
-function showData(categories, summary) {
+function showData(categories, summary, status) {
    
-   scoreContainer.style.visibility = "visible";
+   if(status === 404) {
+      scoreContainer.style.visibility = "hidden";
+   }else {
+      scoreContainer.style.visibility = "visible";
+   }
 
    description.innerHTML =  "";
    scoreRight.innerHTML = "";
@@ -71,7 +76,7 @@ function showData(categories, summary) {
       let catName = categories[i].name;
       let catScore = categories[i].score_out_of_10.toFixed(1);
       
-      let finalScore = `${catName}: <span style="color:red;">${catScore}</span> <br>`;
+      let finalScore = `${catName}: <span style="color:#E74C3C;">${catScore}</span> <br>`;
 
       if (i <= 8){
          scoreLeft.innerHTML +=  finalScore;

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 
 body {
-   font-family: sans-serif;
+   font-family: "Noto Sans",sans-serif;
    color: white;
    
 }
@@ -11,5 +14,13 @@ body {
 
 .scores-left,
 .scores-right{
-   line-height: 1.8rem;
+   font-weight: 700;
+   font-size: 1.3rem;
+   color: #205A96;
+   line-height: 2.5rem;
+}
+
+
+.summary {
+   line-height: 1.6rem;
 }
