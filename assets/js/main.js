@@ -32,9 +32,6 @@ function manageQuery(args) {
    }
    apiUrl += `/scores/`;
 
-   console.log(apiUrl);
-
-
    getData(apiUrl).catch(error => console.error(error));
 };
 
@@ -45,9 +42,6 @@ async function getData(url) {
    const response = await fetch(url);
 
    const data = await response.json();
-
-   console.log(data);
-
 
    getObj(data);
 };
@@ -60,7 +54,6 @@ function getObj(obj) {
    let dataCityScore = obj.teleport_city_score;
    let dataStatus = obj.status;
 
-
    showData(dataCategories, dataSummary, dataCityScore, dataStatus);
 }
 
@@ -68,6 +61,7 @@ function getObj(obj) {
 function showData(categories, summary, score, status) {
    
    if(status === 404) {
+
       scoreContainer.style.display = "none";
       alert("City not found. Try again!");
 
@@ -79,7 +73,6 @@ function showData(categories, summary, score, status) {
    scoreRight.innerHTML = "";
    scoreLeft.innerHTML = "";
    cityScore.innerHTML = "";
-
 
 
    cityScore.innerHTML = score.toFixed(1);
@@ -100,13 +93,7 @@ function showData(categories, summary, score, status) {
 
    description.innerHTML = summary;
    console.log(summary);
-   
 }
-
-
-
-
-
 
 
 submit.addEventListener("click", () => manageQuery(input.value));
