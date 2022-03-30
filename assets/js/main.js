@@ -6,6 +6,8 @@ let submit = document.querySelector(".submit-btn");
 
 let scoreContainer = document.querySelector(".score-descr");
 
+let cityScore = document.querySelector(".teleport-score");
+
 let scoreLeft = document.querySelector(".scores-left-content");
 
 let scoreRight = document.querySelector(".scores-right-content");
@@ -19,15 +21,14 @@ function manageQuery(args) {
 
    let queries = args.toLowerCase().split(" ");
 
-   
+   let queriesFiltered = queries.filter((value) => value !== "");
 
-   let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queries[0]}`;
+   console.log(queriesFiltered);
 
-   for (let i = 1; i < queries.length; i++) {
+   let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queriesFiltered[0]}`;
 
-      if (queries[i] !== ""){
-         apiUrl += `-${queries[i]}`;
-      };
+   for (let i = 1; i < queriesFiltered.length; i++) {
+      apiUrl += `-${queriesFiltered[i]}`;
    }
    apiUrl += `/scores/`;
 
@@ -56,26 +57,32 @@ function getObj(obj) {
    
    let dataCategories = obj.categories;
    let dataSummary = obj.summary;
+   let dataCityScore = obj.teleport_city_score;
    let dataStatus = obj.status;
 
-   showData(dataCategories, dataSummary, dataStatus);
+
+   showData(dataCategories, dataSummary, dataCityScore, dataStatus);
 }
 
 
-function showData(categories, summary, status) {
+function showData(categories, summary, score, status) {
    
    if(status === 404) {
-
       scoreContainer.style.display = "none";
-      alert("City not found!");
+      alert("City not found. Try again!");
 
    }else {
       scoreContainer.style.display= "flex";
    }
 
-   description.innerHTML =  "";
+   description.innerHTML = "";
    scoreRight.innerHTML = "";
    scoreLeft.innerHTML = "";
+   cityScore.innerHTML = "";
+
+
+
+   cityScore.innerHTML = score.toFixed(1);
 
    for (let i = 0; i < categories.length; i++) {
 
@@ -87,14 +94,12 @@ function showData(categories, summary, status) {
       if (i <= 8){
          scoreLeft.innerHTML +=  finalScore;
       }else {
-          scoreRight.innerHTML +=  finalScore;
+         scoreRight.innerHTML +=  finalScore;
        };
    }
 
-   let resume = summary;
-
-   description.innerHTML = resume;
-   console.log(resume);
+   description.innerHTML = summary;
+   console.log(summary);
    
 }
 
