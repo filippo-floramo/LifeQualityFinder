@@ -1,5 +1,8 @@
 "use strict";
 
+
+/*Setting up DOM variables*/ 
+
 let input = document.querySelector(".search-bar");
 
 let submit = document.querySelector(".submit-btn");
@@ -15,7 +18,7 @@ let scoreRight = document.querySelector(".scores-right-content");
 let description = document.querySelector(".summary");
 
    
-
+/*Creating functions to manage input from user and retrieve data*/
 
 function manageQuery(args) {
 
@@ -94,5 +97,7 @@ function showData(categories, summary, score, status) {
    description.innerHTML = summary;
 }
 
+
+/*Calling the functions on click*/
 
 submit.addEventListener("click", () => manageQuery(input.value));

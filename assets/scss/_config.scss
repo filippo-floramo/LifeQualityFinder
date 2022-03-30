@@ -4,6 +4,10 @@
    box-sizing: border-box;
 }
 
+html {
+   scroll-behavior: smooth;
+}
+
 body {
    background-color: #1069E2;
    height: auto;
