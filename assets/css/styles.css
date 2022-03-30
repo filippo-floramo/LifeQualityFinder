@@ -55,12 +55,12 @@ body {
 }
 
 .title {
-  margin-top: 90px;
-  margin-bottom: 20vh;
+  margin-top: 70px;
+  margin-bottom: 105px;
 }
 
 .nav-bar {
-  padding-bottom: 60px;
+  padding-bottom: 150px;
 }
 
 .nav-bar .search-bar {
@@ -78,7 +78,6 @@ body {
 }
 
 .score-descr {
-  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,6 +88,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
+}
+
+.score-descr .city-score {
+  margin-bottom: 30px;
 }
 
 .score-descr .scores {
@@ -97,10 +101,11 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border: 2px solid red;
   border-radius: 10px;
   padding: 20px 20px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: white;
+  -webkit-box-shadow: 3px 3px  50px -15px black;
+          box-shadow: 3px 3px  50px -15px black;
 }
 
 .score-descr .scores .scores-left {
@@ -112,7 +117,7 @@ body {
 }
 
 .score-descr .about {
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 .score-descr .summary {
@@ -122,8 +127,25 @@ body {
 }
 
 @media (max-width: 600px) {
+  .title {
+    text-align: center;
+    padding: 0 15px;
+  }
   .nav-bar .search-bar {
     width: 250px;
+  }
+  .score-descr .scores {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 30px;
+  }
+  .score-descr .scores .scores-left {
+    padding-right: 0;
+  }
+  .score-descr .scores .scores-right {
+    padding-left: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */

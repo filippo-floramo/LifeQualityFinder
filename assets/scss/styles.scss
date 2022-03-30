@@ -2,14 +2,15 @@
 @import "typo";
 
 .title {
-   margin-top: 90px;;
-   margin-bottom: 20vh;
+
+   margin-top: 70px;
+   margin-bottom: 105px;
 }
 
 
 .nav-bar {
    
-   padding-bottom: 60px;
+   padding-bottom: 150px;
 
    .search-bar {
    height: 40px;
@@ -28,20 +29,23 @@
 
 .score-descr {
 
-   visibility: hidden;
    
    display: flex;
    flex-direction: column;
    align-items: center;
 
+   .city-score {
+      margin-bottom: 30px ;
+   }
+
    .scores {
    display: flex;
    justify-content: space-around;
-   border: 2px solid red;
    border-radius: 10px;
    padding: 20px 20px;
 
-   background-color:rgba(255,255,255, 0.85);
+   background-color:rgb(255, 255, 255);
+   box-shadow: 3px 3px  50px -15px black;
 
       .scores-left{
          padding-right: 75px;
@@ -54,7 +58,7 @@
    }
 
    .about {
-      margin-top: 40px;
+      margin-top: 90px;
    }
    .summary {
       width: 80%;
@@ -62,6 +66,7 @@
       padding: 0 20px 50px 20px;
    }
 
+   display: none;
 }
 
 

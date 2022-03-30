@@ -19,10 +19,15 @@ function manageQuery(args) {
 
    let queries = args.toLowerCase().split(" ");
 
+   
+
    let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queries[0]}`;
 
    for (let i = 1; i < queries.length; i++) {
-      apiUrl += `-${queries[i]}`;
+
+      if (queries[i] !== ""){
+         apiUrl += `-${queries[i]}`;
+      };
    }
    apiUrl += `/scores/`;
 
@@ -39,8 +44,6 @@ async function getData(url) {
    const response = await fetch(url);
 
    const data = await response.json();
-
-   if (data.status === 404) {alert("City not found");};
 
    console.log(data);
 
@@ -62,9 +65,12 @@ function getObj(obj) {
 function showData(categories, summary, status) {
    
    if(status === 404) {
-      scoreContainer.style.visibility = "hidden";
+
+      scoreContainer.style.display = "none";
+      alert("City not found");
+
    }else {
-      scoreContainer.style.visibility = "visible";
+      scoreContainer.style.display= "flex";
    }
 
    description.innerHTML =  "";

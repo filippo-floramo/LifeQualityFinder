@@ -1,10 +1,36 @@
 @media (max-width: 600px){
 
 
+   .title {
+     text-align: center;
+      padding: 0 15px;
+   }
+
    .nav-bar {
 
       .search-bar {
          width: 250px;
+      }
+   }
+
+
+   .score-descr {
+
+
+      .scores {
+
+         flex-direction: column;
+
+         padding: 30px;
+
+         .scores-left {
+            padding-right: 0;
+         }
+
+         .scores-right {
+            padding-left: 0;
+         }
+
       }
    }
 }
