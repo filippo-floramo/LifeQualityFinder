@@ -92,7 +92,6 @@ function showData(categories, summary, score, status) {
    }
 
    description.innerHTML = summary;
-   console.log(summary);
 }
 
 
