@@ -1,8 +1,9 @@
 @import "config";
 @import "typo";
+@import "button";
 
 .title {
-
+   max-width: 550px;
    margin-top: 70px;
    margin-bottom: 105px;
 }
@@ -10,7 +11,7 @@
 
 .nav-bar {
    
-   padding-bottom: 150px;
+   padding-bottom: 135px;
 
    .search-bar {
    height: 40px;
@@ -18,13 +19,9 @@
    padding: 3px 20px;
    border: 1px solid grey;
    border-radius: 22px;
+   box-shadow:  6px 3px 30px -15px black;
    }
 
-   .submit-btn {
-      border: none;
-      padding: 15px;
-      border-radius: 100%;
-   }
 }
 
 .score-descr {

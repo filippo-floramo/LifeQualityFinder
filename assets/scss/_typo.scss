@@ -12,6 +12,22 @@ body {
    font-size: 1.8rem;
 }
 
+.search-bar {
+   font-family: "Noto Sans";
+   font-size: 1.05rem;
+}
+
+.submit-btn {
+   font-family: "Noto Sans";
+   font-size: 1.06rem;
+   font-weight: 700;
+   color: #E74C3C;
+}
+
+.city-score {
+   font-size: 1.6rem;
+}
+
 .scores-left,
 .scores-right{
    font-weight: 700;
@@ -20,7 +36,11 @@ body {
    line-height: 2.5rem;
 }
 
+.about {
+   font-size: 1.6rem;
+}
 
 .summary {
-   line-height: 1.6rem;
+   line-height: 2rem;
+   font-size: 1.3rem;
 }

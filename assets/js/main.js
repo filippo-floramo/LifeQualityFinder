@@ -67,7 +67,7 @@ function showData(categories, summary, status) {
    if(status === 404) {
 
       scoreContainer.style.display = "none";
-      alert("City not found");
+      alert("City not found!");
 
    }else {
       scoreContainer.style.display= "flex";
