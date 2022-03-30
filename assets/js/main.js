@@ -35,7 +35,7 @@ function manageQuery(args) {
    console.log(apiUrl);
 
 
-   getData(apiUrl);
+   getData(apiUrl).catch(error => console.error(error));
 };
 
 
