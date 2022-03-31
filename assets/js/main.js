@@ -25,9 +25,7 @@ function manageQuery(args) {
    let queries = args.toLowerCase().split(" ");
 
    let queriesFiltered = queries.filter((value) => value !== "");
-
-   console.log(queriesFiltered);
-
+   
    let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queriesFiltered[0]}`;
 
    for (let i = 1; i < queriesFiltered.length; i++) {
