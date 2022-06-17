@@ -28,9 +28,11 @@ function manageQuery(args) {
    
    let apiUrl = `https://api.teleport.org/api/urban_areas/slug:${queriesFiltered[0]}`;
 
-   for (let i = 1; i < queriesFiltered.length; i++) {
-      apiUrl += `-${queriesFiltered[i]}`;
-   }
+
+   queriesFiltered.forEach((item, index) => {
+      if(index >= 1) {apiUrl += `-${item}`;};
+   })
+
    apiUrl += `/scores/`;
 
    getData(apiUrl).catch(error => console.error(error));
@@ -78,20 +80,23 @@ function showData(categories, summary, score, status) {
 
    cityScore.innerHTML = score.toFixed(1);
 
-   for (let i = 0; i < categories.length; i++) {
 
-      let catName = categories[i].name;
-      let catScore = categories[i].score_out_of_10.toFixed(1);
-      
+
+   //optimizing for loop 
+
+   categories.forEach( (item, index) => {
+
+      let catName = item.name;
+      let catScore = item.score_out_of_10.toFixed(1);
+
       let finalScore = `${catName}: <span style="color:#E74C3C;">${catScore}</span> <br>`;
 
-      if (i <= 8){
-         scoreLeft.innerHTML +=  finalScore;
-      }else {
-         scoreRight.innerHTML +=  finalScore;
-       };
-   }
-
+         if (index <= 8){
+                   scoreLeft.innerHTML +=  finalScore;
+                }else {
+                   scoreRight.innerHTML +=  finalScore;
+                 };
+   });
    description.innerHTML = summary;
 }
 
@@ -99,3 +104,9 @@ function showData(categories, summary, score, status) {
 /*Calling the functions on click*/
 
 submit.addEventListener("click", () => manageQuery(input.value));
+
+input.addEventListener("keypress", (event) => {
+  if (event.key === "Enter"){
+   event.preventDefault();
+   submit.click();
+  }});
